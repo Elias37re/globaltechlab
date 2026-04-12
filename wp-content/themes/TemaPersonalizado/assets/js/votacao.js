@@ -5,7 +5,46 @@
     var LS_DONE = 'temaVotacaoFeito';
 
     var ajaxUrl = typeof temaVotacao !== 'undefined' ? temaVotacao.ajaxUrl : '';
-    var nonce = typeof temaVotacao !== 'undefined' ? temaVotacao.nonce : '';
+
+    function getFreshNonce() {
+        if (!ajaxUrl) {
+            return Promise.reject(new Error('Erro de configuração (AJAX).'));
+        }
+        var u = new URL(ajaxUrl, window.location.href);
+        u.searchParams.set('action', 'tema_votacao_fresh_nonce');
+        return fetch(u.toString(), {
+            method: 'GET',
+            credentials: 'same-origin',
+            headers: { Accept: 'application/json' },
+        }).then(function (r) {
+            return r.text().then(function (text) {
+                var parsed;
+                try {
+                    parsed = JSON.parse(text);
+                } catch (e) {
+                    throw new Error(
+                        'Resposta inválida ao obter nonce. Verifique cache da página ou bloqueios no servidor.'
+                    );
+                }
+                var ok =
+                    r.ok &&
+                    parsed &&
+                    parsed.success &&
+                    parsed.data &&
+                    typeof parsed.data.nonce === 'string';
+                if (!ok) {
+                    var msg =
+                        parsed &&
+                        parsed.data &&
+                        typeof parsed.data.message === 'string'
+                            ? parsed.data.message
+                            : 'Erro HTTP ' + r.status;
+                    throw new Error(msg);
+                }
+                return parsed.data.nonce;
+            });
+        });
+    }
 
     var msgEl = document.querySelector('.js-votacao-msg');
     var botoes = document.querySelectorAll('.js-votar');
@@ -151,7 +190,7 @@
             setMsg('Faça o cadastro antes de votar.', true);
             return;
         }
-        if (!ajaxUrl || !nonce) {
+        if (!ajaxUrl) {
             setMsg('Erro de configuração (AJAX).', true);
             return;
         }
@@ -160,21 +199,24 @@
             b.disabled = true;
         });
 
-        var body = new URLSearchParams();
-        body.set('action', 'tema_registrar_voto');
-        body.set('nonce', nonce);
-        body.set('candidato', candidato);
-        body.set('participante_id', String(sess.participanteId));
-        body.set('voto_token', sess.votoToken);
+        getFreshNonce()
+            .then(function (tok) {
+                var body = new URLSearchParams();
+                body.set('action', 'tema_registrar_voto');
+                body.set('nonce', tok);
+                body.set('candidato', candidato);
+                body.set('participante_id', String(sess.participanteId));
+                body.set('voto_token', sess.votoToken);
 
-        fetch(ajaxUrl, {
-            method: 'POST',
-            credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            },
-            body: body.toString(),
-        })
+                return fetch(ajaxUrl, {
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                    },
+                    body: body.toString(),
+                });
+            })
             .then(function (r) {
                 return r.json();
             })
@@ -195,8 +237,8 @@
                     setMsg(err, true);
                 }
             })
-            .catch(function () {
-                setMsg('Falha de rede. Tente novamente.', true);
+            .catch(function (err) {
+                setMsg((err && err.message) || 'Falha de rede. Tente novamente.', true);
             })
             .finally(function () {
                 botoes.forEach(function (b) {
@@ -208,7 +250,7 @@
     if (elCadastroForm) {
         elCadastroForm.addEventListener('submit', function (ev) {
             ev.preventDefault();
-            if (!ajaxUrl || !nonce) {
+            if (!ajaxUrl) {
                 setCadastroMsg('Erro de configuração (AJAX).', true);
                 return;
             }
@@ -224,22 +266,25 @@
             setCadastroMsg('Enviando cadastro…', false);
             if (elCadastroSubmit) elCadastroSubmit.disabled = true;
 
-            var body = new URLSearchParams();
-            body.set('action', 'tema_cadastrar_participante');
-            body.set('nonce', nonce);
-            body.set('nome_completo', nome);
-            body.set('cidade', cidade);
-            body.set('estado', estado);
-            body.set('email', email);
+            getFreshNonce()
+                .then(function (tok) {
+                    var body = new URLSearchParams();
+                    body.set('action', 'tema_cadastrar_participante');
+                    body.set('nonce', tok);
+                    body.set('nome_completo', nome);
+                    body.set('cidade', cidade);
+                    body.set('estado', estado);
+                    body.set('email', email);
 
-            fetch(ajaxUrl, {
-                method: 'POST',
-                credentials: 'same-origin',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                },
-                body: body.toString(),
-            })
+                    return fetch(ajaxUrl, {
+                        method: 'POST',
+                        credentials: 'same-origin',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                        },
+                        body: body.toString(),
+                    });
+                })
                 .then(function (r) {
                     return r.text().then(function (text) {
                         var parsed;

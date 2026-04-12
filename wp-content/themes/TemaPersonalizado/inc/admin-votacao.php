@@ -186,7 +186,7 @@ function tema_votacao_admin_scripts(string $hook_suffix): void {
             'pdfFilename' => 'relatorio-votacao-' . wp_date('Y-m-d'),
             'i18n' => [
                 'lula' => 'Lula',
-                'bolsonaro' => 'Flávio Bolsonaro',
+                'bolsonaro' => 'Flavio Bolsonaro',
                 'titleUf' => __('Votos por estado (UF)', 'tema-personalizado'),
                 'titleCidade' => __('Votos por cidade', 'tema-personalizado'),
                 'pdfUnavailable' => __('Não foi possível gerar o PDF. Recarregue a página e tente de novo.', 'tema-personalizado'),
@@ -273,7 +273,7 @@ function tema_votacao_render_admin_page(): void {
     echo '<div class="tema-votacao-cards">';
     echo '<div class="tema-votacao-card"><span>' . esc_html__('Total de votos', 'tema-personalizado') . '</span><strong>' . esc_html(number_format_i18n($total_votos)) . '</strong></div>';
     echo '<div class="tema-votacao-card"><span>Lula</span><strong>' . esc_html(number_format_i18n($totais['lula'])) . '</strong></div>';
-    echo '<div class="tema-votacao-card"><span>' . esc_html__('Flávio Bolsonaro', 'tema-personalizado') . '</span><strong>' . esc_html(number_format_i18n($totais['bolsonaro'])) . '</strong></div>';
+    echo '<div class="tema-votacao-card"><span>' . esc_html__('Flavio Bolsonaro', 'tema-personalizado') . '</span><strong>' . esc_html(number_format_i18n($totais['bolsonaro'])) . '</strong></div>';
     echo '<div class="tema-votacao-card"><span>' . esc_html__('Participantes cadastrados', 'tema-personalizado') . '</span><strong>' . esc_html(number_format_i18n($total_part)) . '</strong></div>';
     echo '<div class="tema-votacao-card"><span>' . esc_html__('Já votaram', 'tema-personalizado') . '</span><strong>' . esc_html(number_format_i18n($part_votaram)) . '</strong></div>';
     echo '<div class="tema-votacao-card"><span>' . esc_html__('Cadastro sem voto', 'tema-personalizado') . '</span><strong>' . esc_html(number_format_i18n($part_pendentes)) . '</strong></div>';
@@ -317,7 +317,7 @@ function tema_votacao_render_admin_page(): void {
         echo '<th>' . esc_html__('Estado (UF)', 'tema-personalizado') . '</th>';
         echo '<th>' . esc_html__('Cidade', 'tema-personalizado') . '</th>';
         echo '<th>Lula</th>';
-        echo '<th>' . esc_html__('Flávio Bolsonaro', 'tema-personalizado') . '</th>';
+        echo '<th>' . esc_html__('Flavio Bolsonaro', 'tema-personalizado') . '</th>';
         echo '<th>' . esc_html__('Total', 'tema-personalizado') . '</th>';
         echo '</tr></thead><tbody>';
         foreach ($by_city_rows as $c) {
@@ -355,7 +355,7 @@ function tema_votacao_render_admin_page(): void {
             $uf = isset($r['estado']) ? (string) $r['estado'] : '';
             $email = isset($r['email']) ? (string) $r['email'] : '';
             $cand = isset($r['candidato']) ? (string) $r['candidato'] : '';
-            $cand_label = $cand === 'lula' ? 'Lula' : ($cand === 'bolsonaro' ? __('Flávio Bolsonaro', 'tema-personalizado') : $cand);
+            $cand_label = $cand === 'lula' ? 'Lula' : ($cand === 'bolsonaro' ? __('Flavio Bolsonaro', 'tema-personalizado') : $cand);
             $when = isset($r['criado_em']) ? mysql2date(get_option('date_format') . ' ' . get_option('time_format'), $r['criado_em']) : '—';
             $pid = isset($r['participante_id']) ? (int) $r['participante_id'] : 0;
             echo '<tr>';

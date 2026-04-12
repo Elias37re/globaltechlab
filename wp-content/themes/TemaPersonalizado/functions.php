@@ -176,6 +176,20 @@ function tema_votacao_contagens(): array {
     return ['lula' => $lula, 'bolsonaro' => $bolsonaro];
 }
 
+/**
+ * Devolve um nonce novo para o formulário (sem exigir nonce válido).
+ * Evita 403 quando a página foi servida de cache com HTML antigo ou após expiração do tick do nonce.
+ */
+function tema_votacao_fresh_nonce_ajax(): void {
+    nocache_headers();
+    wp_send_json_success([
+        'nonce' => wp_create_nonce('tema_votacao_nonce'),
+    ]);
+}
+
+add_action('wp_ajax_tema_votacao_fresh_nonce', 'tema_votacao_fresh_nonce_ajax');
+add_action('wp_ajax_nopriv_tema_votacao_fresh_nonce', 'tema_votacao_fresh_nonce_ajax');
+
 function tema_cadastrar_participante_ajax(): void {
     check_ajax_referer('tema_votacao_nonce', 'nonce');
     if (!tema_votacao_tabela_participantes_existe()) {
