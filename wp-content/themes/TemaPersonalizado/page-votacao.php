@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Página de votação
- * Descrição: Voto Lula x Bolsonaro com áreas para foto e AdSense.
+ * Descrição: Voto Lula x Flávio Bolsonaro com áreas para foto e AdSense.
  */
 
 if (!defined('ABSPATH')) {
@@ -92,13 +92,13 @@ $ufs = tema_votacao_lista_ufs();
                 <img
                     class="votacao-foto"
                     src="<?php echo esc_url($uri_bolsonaro); ?>"
-                    alt="<?php esc_attr_e('Candidato Bolsonaro', 'tema-personalizado'); ?>"
+                    alt="<?php esc_attr_e('Candidato Flávio Bolsonaro', 'tema-personalizado'); ?>"
                     width="280"
                     height="320"
                     loading="lazy"
                 >
             </div>
-            <h2 class="votacao-nome">Bolsonaro</h2>
+            <h2 class="votacao-nome">Flávio Bolsonaro</h2>
             <p class="votacao-contagem" data-contagem="bolsonaro"><?php echo esc_html(number_format_i18n($totais['bolsonaro'])); ?> votos</p>
             <button type="button" class="votacao-btn js-votar" data-candidato="bolsonaro">Votar</button>
         </article>

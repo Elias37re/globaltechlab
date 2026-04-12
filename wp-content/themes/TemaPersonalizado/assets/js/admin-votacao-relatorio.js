@@ -56,7 +56,7 @@
                         borderWidth: 1,
                     },
                     {
-                        label: i18n.bolsonaro || 'Bolsonaro',
+                        label: i18n.bolsonaro || 'Flávio Bolsonaro',
                         data: dataBol,
                         backgroundColor: 'rgba(37, 99, 235, 0.75)',
                         borderColor: 'rgb(29, 78, 216)',
@@ -113,7 +113,7 @@
                         borderWidth: 1,
                     },
                     {
-                        label: i18n.bolsonaro || 'Bolsonaro',
+                        label: i18n.bolsonaro || 'Flávio Bolsonaro',
                         data: d.bolsonaro,
                         backgroundColor: 'rgba(37, 99, 235, 0.75)',
                         borderColor: 'rgb(29, 78, 216)',
