@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/eliast19/public_html/globaltechlab/wp-content/themes/TemaPersonalizado/
-    - /bin/cp -R wp-content/themes/TemaPersonalizado/* $DEPLOYPATH
+    - /bin/cp -R * $DEPLOYPATH
