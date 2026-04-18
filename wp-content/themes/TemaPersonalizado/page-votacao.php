@@ -14,7 +14,10 @@ tema_votacao_enqueue_assets();
 
 $totais = tema_votacao_contagens();
 $uri_lula = tema_uri_foto_candidato('lula.jpg', 'placeholder-lula.svg');
-$uri_bolsonaro = tema_uri_foto_candidato('bolsonaro.jpg', 'placeholder-bolsonaro.svg');
+$uri_bolsonaro = tema_uri_foto_candidato_multi(
+    ['flabio-bolsonaro.jpg', 'flavio-bolsonaro.jpg', 'bolsonaro.jpg'],
+    'placeholder-flabio-bolsonaro.svg'
+);
 $ufs = tema_votacao_lista_ufs();
 ?>
 <main class="votacao-page">
@@ -87,7 +90,7 @@ $ufs = tema_votacao_lista_ufs();
             <span class="adsense-label">Espaço AdSense (lateral)</span>
         </aside>
 
-        <article class="votacao-card" data-candidato="bolsonaro">
+        <article class="votacao-card" data-candidato="bolsonaro" aria-label="<?php esc_attr_e('Candidato Flavio Bolsonaro', 'tema-personalizado'); ?>">
             <div class="votacao-foto-wrap">
                 <img
                     class="votacao-foto"
@@ -98,9 +101,9 @@ $ufs = tema_votacao_lista_ufs();
                     loading="lazy"
                 >
             </div>
-            <h2 class="votacao-nome">Flavio Bolsonaro</h2>
+            <h2 class="votacao-nome" id="votacao-nome-flavio-bolsonaro"><?php esc_html_e('Flavio Bolsonaro', 'tema-personalizado'); ?></h2>
             <p class="votacao-contagem" data-contagem="bolsonaro"><?php echo esc_html(number_format_i18n($totais['bolsonaro'])); ?> votos</p>
-            <button type="button" class="votacao-btn js-votar" data-candidato="bolsonaro">Votar</button>
+            <button type="button" class="votacao-btn js-votar" data-candidato="bolsonaro" aria-labelledby="votacao-nome-flavio-bolsonaro"><?php esc_html_e('Votar', 'tema-personalizado'); ?></button>
         </article>
     </div>
 

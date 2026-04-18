@@ -363,6 +363,26 @@ function tema_uri_foto_candidato(string $arquivo_jpg, string $placeholder_svg): 
 }
 
 /**
+ * Primeiro arquivo JPG existente na pasta candidatos; senão o placeholder.
+ *
+ * @param string[] $arquivos_jpg Ordem de preferência (ex.: flavio-bolsonaro.jpg, bolsonaro.jpg).
+ */
+function tema_uri_foto_candidato_multi(array $arquivos_jpg, string $placeholder_svg): string {
+    $dir = get_template_directory() . '/assets/candidatos/';
+    $base = get_template_directory_uri() . '/assets/candidatos/';
+    foreach ($arquivos_jpg as $arquivo_jpg) {
+        $arquivo_jpg = basename((string) $arquivo_jpg);
+        if ($arquivo_jpg === '') {
+            continue;
+        }
+        if (is_readable($dir . $arquivo_jpg)) {
+            return $base . $arquivo_jpg;
+        }
+    }
+    return $base . $placeholder_svg;
+}
+
+/**
  * Scripts da urna (chamado no hook e no template para não depender só da detecção da página).
  */
 function tema_votacao_enqueue_assets(): void {
