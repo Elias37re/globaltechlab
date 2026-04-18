@@ -54,8 +54,6 @@
     var elCadastroSubmit = document.querySelector('.js-votacao-cadastro-submit');
     var elUrna = document.querySelector('.js-votacao-urna');
     var elFim = document.querySelector('.js-votacao-fim');
-    var elVoltarInicio = document.querySelector('.js-votacao-voltar-inicio');
-    var elTopoVotacao = document.getElementById('votacao-inicio');
 
     function formatNum(n) {
         try {
@@ -337,19 +335,6 @@
             if (c) enviarVoto(c);
         });
     });
-
-    if (elVoltarInicio && elTopoVotacao) {
-        elVoltarInicio.addEventListener('click', function () {
-            elTopoVotacao.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            requestAnimationFrame(function () {
-                try {
-                    elTopoVotacao.focus({ preventScroll: true });
-                } catch (e) {
-                    /* ignore */
-                }
-            });
-        });
-    }
 
     applyView();
 })();

@@ -169,6 +169,9 @@ Version: 1.0.1
     margin: 1.25rem auto 0;
     max-width: 22rem;
     display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .votacao-grid {
