@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/eliast19/public_html/globaltechlab/
+    - export DEPLOYPATH=/home2/eliast19/public_html/
     - /bin/cp -R * $DEPLOYPATH
