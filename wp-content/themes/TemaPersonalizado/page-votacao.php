@@ -21,7 +21,7 @@ $uri_bolsonaro = tema_uri_foto_candidato_multi(
 $ufs = tema_votacao_lista_ufs();
 ?>
 <main class="votacao-page">
-    <header class="votacao-header">
+    <header class="votacao-header" id="votacao-inicio" tabindex="-1">
         <h1 class="votacao-titulo"><?php echo esc_html(get_the_title()); ?></h1>
     </header>
 
@@ -59,6 +59,7 @@ $ufs = tema_votacao_lista_ufs();
 
     <div class="votacao-fim js-votacao-fim" hidden>
         <p class="votacao-fim-texto">Obrigado — seu voto foi registrado.</p>
+        <button type="button" class="votacao-btn votacao-fim-voltar js-votacao-voltar-inicio">Voltar ao início</button>
     </div>
 
     <div class="votacao-urna js-votacao-urna" hidden>

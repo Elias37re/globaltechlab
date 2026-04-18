@@ -165,6 +165,12 @@ Version: 1.0.1
     color: #1b5e20;
 }
 
+.votacao-fim-voltar {
+    margin: 1.25rem auto 0;
+    max-width: 22rem;
+    display: block;
+}
+
 .votacao-grid {
     display: grid;
     grid-template-columns: 1fr;
