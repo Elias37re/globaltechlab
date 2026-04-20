@@ -22,7 +22,7 @@ $ufs = tema_votacao_lista_ufs();
 ?>
 <main class="votacao-page">
     <header class="votacao-header">
-        <h1 class="votacao-titulo"><?php echo esc_html(get_the_title()); ?></h1>
+        <h1 class="votacao-titulo"><?php esc_html_e('Pesquisa de Votação Presidencial 2026', 'tema-personalizado'); ?></h1>
     </header>
 
     <section class="votacao-cadastro js-votacao-cadastro" aria-labelledby="votacao-cadastro-titulo">
@@ -59,7 +59,9 @@ $ufs = tema_votacao_lista_ufs();
 
     <div class="votacao-fim js-votacao-fim" hidden>
         <p class="votacao-fim-texto">Obrigado — seu voto foi registrado.</p>
-        <a class="votacao-btn votacao-fim-voltar" href="<?php echo esc_url(home_url('/')); ?>">Voltar à página inicial</a>
+        <button type="button" class="votacao-btn votacao-fim-voltar js-votacao-fim-voltar">
+            <?php esc_html_e('Voltar ao cadastro', 'tema-personalizado'); ?>
+        </button>
     </div>
 
     <div class="votacao-urna js-votacao-urna" hidden>

@@ -54,6 +54,7 @@
     var elCadastroSubmit = document.querySelector('.js-votacao-cadastro-submit');
     var elUrna = document.querySelector('.js-votacao-urna');
     var elFim = document.querySelector('.js-votacao-fim');
+    var elFimVoltar = document.querySelector('.js-votacao-fim-voltar');
 
     function formatNum(n) {
         try {
@@ -133,6 +134,14 @@
         }
     }
 
+    function clearFeito() {
+        try {
+            localStorage.removeItem(LS_DONE);
+        } catch (e) {
+            /* ignore */
+        }
+    }
+
     function atualizarContagens(data) {
         if (typeof data.lula === 'number') {
             var elL = document.querySelector('[data-contagem="lula"]');
@@ -181,6 +190,27 @@
         }
         requestAnimationFrame(function () {
             elUrna.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    }
+
+    function voltarCenaCadastro() {
+        clearFeito();
+        clearSess();
+        setMsg('');
+        setCadastroMsg('');
+        if (elCadastroForm) {
+            elCadastroForm.reset();
+        }
+        botoes.forEach(function (b) {
+            b.disabled = false;
+        });
+        setHidden(elFim, true);
+        setHidden(elUrna, true);
+        setHidden(elCadastro, false);
+        requestAnimationFrame(function () {
+            if (elCadastro) {
+                elCadastro.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
     }
 
@@ -335,6 +365,12 @@
             if (c) enviarVoto(c);
         });
     });
+
+    if (elFimVoltar) {
+        elFimVoltar.addEventListener('click', function () {
+            voltarCenaCadastro();
+        });
+    }
 
     applyView();
 })();

@@ -350,33 +350,54 @@ function tema_is_pagina_votacao(): bool {
 }
 
 /**
- * URL da foto do candidato ou placeholder SVG se o arquivo não existir.
+ * Resolve nome de ficheiro (ex.: lula.jpg) para o primeiro ficheiro legível com o mesmo stem
+ * e extensão jpg, jpeg, png ou webp.
  */
-function tema_uri_foto_candidato(string $arquivo_jpg, string $placeholder_svg): string {
+function tema_uri_foto_candidato_resolve(string $dir, string $base_uri, string $filename): ?string {
+    $filename = basename((string) $filename);
+    if ($filename === '') {
+        return null;
+    }
+    $stem = pathinfo($filename, PATHINFO_FILENAME);
+    if (!is_string($stem) || $stem === '') {
+        $stem = $filename;
+    }
+    foreach (['jpg', 'jpeg', 'png', 'webp'] as $ext) {
+        $f = $stem . '.' . $ext;
+        if (is_readable($dir . $f)) {
+            return $base_uri . $f;
+        }
+    }
+    return null;
+}
+
+/**
+ * URL da foto do candidato ou placeholder SVG se o arquivo não existir.
+ *
+ * @param string $arquivo Nome sugerido (ex.: lula.jpg); aceita png/webp com o mesmo prefixo.
+ */
+function tema_uri_foto_candidato(string $arquivo, string $placeholder_svg): string {
     $dir = get_template_directory() . '/assets/candidatos/';
     $base = get_template_directory_uri() . '/assets/candidatos/';
-    $jpg = $dir . $arquivo_jpg;
-    if (is_readable($jpg)) {
-        return $base . $arquivo_jpg;
+    $resolved = tema_uri_foto_candidato_resolve($dir, $base, $arquivo);
+    if ($resolved !== null) {
+        return $resolved;
     }
     return $base . $placeholder_svg;
 }
 
 /**
- * Primeiro arquivo JPG existente na pasta candidatos; senão o placeholder.
+ * Primeiro candidato resolvido na ordem da lista; senão o placeholder.
  *
- * @param string[] $arquivos_jpg Ordem de preferência (ex.: flavio-bolsonaro.jpg, bolsonaro.jpg).
+ * @param string[] $arquivos Ordem de preferência (stems via nome de ficheiro, ex.: flavio-bolsonaro.jpg).
  */
-function tema_uri_foto_candidato_multi(array $arquivos_jpg, string $placeholder_svg): string {
+function tema_uri_foto_candidato_multi(array $arquivos, string $placeholder_svg): string {
     $dir = get_template_directory() . '/assets/candidatos/';
     $base = get_template_directory_uri() . '/assets/candidatos/';
-    foreach ($arquivos_jpg as $arquivo_jpg) {
-        $arquivo_jpg = basename((string) $arquivo_jpg);
-        if ($arquivo_jpg === '') {
-            continue;
-        }
-        if (is_readable($dir . $arquivo_jpg)) {
-            return $base . $arquivo_jpg;
+    foreach ($arquivos as $arquivo) {
+        $resolved = tema_uri_foto_candidato_resolve($dir, $base, (string) $arquivo);
+        if ($resolved !== null) {
+            return $resolved;
         }
     }
     return $base . $placeholder_svg;

@@ -54,9 +54,13 @@ Version: 1.0.1
 }
 
 .votacao-titulo {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1.15rem, 3.2vw, 1.85rem);
     font-weight: 700;
+    line-height: 1.25;
     margin: 0;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .votacao-cadastro {
@@ -149,8 +153,12 @@ Version: 1.0.1
 }
 
 .votacao-fim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 2.25rem;
     margin-bottom: 1.5rem;
 }
 
@@ -160,14 +168,18 @@ Version: 1.0.1
 
 .votacao-fim-texto {
     margin: 0;
+    padding: 0 0.5rem;
     font-size: 1.1rem;
     font-weight: 600;
+    line-height: 1.45;
     color: #1b5e20;
 }
 
 .votacao-fim-voltar {
-    margin: 1.25rem auto 0;
+    flex-shrink: 0;
+    margin: 0;
     max-width: 22rem;
+    width: 100%;
     display: block;
     text-decoration: none;
     box-sizing: border-box;
