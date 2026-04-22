@@ -19,6 +19,10 @@ $uri_bolsonaro = tema_uri_foto_candidato_multi(
     'placeholder-flabio-bolsonaro.svg'
 );
 $ufs = tema_votacao_lista_ufs();
+$votacao_aviso_lei = __(
+    'Este levantamento de dados não possui caráter científico e não se confunde com pesquisa eleitoral oficial (conforme Art. 33 da Lei 9.504/97).',
+    'tema-personalizado'
+);
 ?>
 <main class="votacao-page">
     <header class="votacao-header">
@@ -55,6 +59,7 @@ $ufs = tema_votacao_lista_ufs();
             <button type="submit" class="votacao-btn votacao-btn-cadastro js-votacao-cadastro-submit">Continuar para votação</button>
         </form>
         <p class="votacao-cadastro-msg js-votacao-cadastro-msg" role="status" aria-live="polite"></p>
+        <p class="votacao-aviso-lei" role="note"><?php echo esc_html($votacao_aviso_lei); ?></p>
     </section>
 
     <div class="votacao-fim js-votacao-fim" hidden>
@@ -62,6 +67,7 @@ $ufs = tema_votacao_lista_ufs();
         <button type="button" class="votacao-btn votacao-fim-voltar js-votacao-fim-voltar">
             <?php esc_html_e('Voltar ao cadastro', 'tema-personalizado'); ?>
         </button>
+        <p class="votacao-aviso-lei" role="note"><?php echo esc_html($votacao_aviso_lei); ?></p>
     </div>
 
     <div class="votacao-urna js-votacao-urna" hidden>
@@ -111,6 +117,7 @@ $ufs = tema_votacao_lista_ufs();
     </div>
 
     <p class="votacao-msg js-votacao-msg" role="status" aria-live="polite"></p>
+    <p class="votacao-aviso-lei" role="note"><?php echo esc_html($votacao_aviso_lei); ?></p>
     </div>
 
     <!-- AdSense: rodapé da página -->
