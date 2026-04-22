@@ -177,6 +177,23 @@ function tema_votacao_contagens(): array {
 }
 
 /**
+ * Percentuais inteiros para a UI (somam 100 quando há votos; não altera armazenamento no BD).
+ *
+ * @return array{lula: int, bolsonaro: int}
+ */
+function tema_votacao_percentuais_exibicao(int $lula, int $bolsonaro): array {
+    $lula = max(0, $lula);
+    $bolsonaro = max(0, $bolsonaro);
+    $total = $lula + $bolsonaro;
+    if ($total <= 0) {
+        return ['lula' => 0, 'bolsonaro' => 0];
+    }
+    $pct_lula = (int) round(($lula / $total) * 100);
+
+    return ['lula' => $pct_lula, 'bolsonaro' => 100 - $pct_lula];
+}
+
+/**
  * Devolve um nonce novo para o formulário (sem exigir nonce válido).
  * Evita 403 quando a página foi servida de cache com HTML antigo ou após expiração do tick do nonce.
  */

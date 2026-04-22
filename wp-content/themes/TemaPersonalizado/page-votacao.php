@@ -13,6 +13,7 @@ get_header();
 tema_votacao_enqueue_assets();
 
 $totais = tema_votacao_contagens();
+$pct = tema_votacao_percentuais_exibicao($totais['lula'], $totais['bolsonaro']);
 $uri_lula = tema_uri_foto_candidato('lula.jpg', 'placeholder-lula.svg');
 $uri_bolsonaro = tema_uri_foto_candidato_multi(
     ['flabio-bolsonaro.jpg', 'flavio-bolsonaro.jpg', 'bolsonaro.jpg'],
@@ -90,7 +91,7 @@ $votacao_aviso_lei = __(
                 >
             </div>
             <h2 class="votacao-nome">Lula</h2>
-            <p class="votacao-contagem" data-contagem="lula"><?php echo esc_html(number_format_i18n($totais['lula'])); ?> votos</p>
+            <p class="votacao-contagem" data-contagem="lula"><?php echo esc_html(number_format_i18n($pct['lula'])); ?>%</p>
             <button type="button" class="votacao-btn js-votar" data-candidato="lula">Votar</button>
         </article>
 
@@ -111,7 +112,7 @@ $votacao_aviso_lei = __(
                 >
             </div>
             <h2 class="votacao-nome" id="votacao-nome-flavio-bolsonaro"><?php esc_html_e('Flavio Bolsonaro', 'tema-personalizado'); ?></h2>
-            <p class="votacao-contagem" data-contagem="bolsonaro"><?php echo esc_html(number_format_i18n($totais['bolsonaro'])); ?> votos</p>
+            <p class="votacao-contagem" data-contagem="bolsonaro"><?php echo esc_html(number_format_i18n($pct['bolsonaro'])); ?>%</p>
             <button type="button" class="votacao-btn js-votar" data-candidato="bolsonaro" aria-labelledby="votacao-nome-flavio-bolsonaro"><?php esc_html_e('Votar', 'tema-personalizado'); ?></button>
         </article>
     </div>

@@ -64,6 +64,17 @@
         }
     }
 
+    function percentuaisExibicao(lula, bolsonaro) {
+        var a = typeof lula === 'number' && lula >= 0 ? lula : 0;
+        var b = typeof bolsonaro === 'number' && bolsonaro >= 0 ? bolsonaro : 0;
+        var total = a + b;
+        if (total <= 0) {
+            return { lula: 0, bolsonaro: 0 };
+        }
+        var pctL = Math.round((a / total) * 100);
+        return { lula: pctL, bolsonaro: 100 - pctL };
+    }
+
     function setMsg(text, isError) {
         if (!msgEl) return;
         msgEl.textContent = text || '';
@@ -143,14 +154,14 @@
     }
 
     function atualizarContagens(data) {
-        if (typeof data.lula === 'number') {
-            var elL = document.querySelector('[data-contagem="lula"]');
-            if (elL) elL.textContent = formatNum(data.lula) + ' votos';
+        if (typeof data.lula !== 'number' || typeof data.bolsonaro !== 'number') {
+            return;
         }
-        if (typeof data.bolsonaro === 'number') {
-            var elB = document.querySelector('[data-contagem="bolsonaro"]');
-            if (elB) elB.textContent = formatNum(data.bolsonaro) + ' votos';
-        }
+        var pct = percentuaisExibicao(data.lula, data.bolsonaro);
+        var elL = document.querySelector('[data-contagem="lula"]');
+        var elB = document.querySelector('[data-contagem="bolsonaro"]');
+        if (elL) elL.textContent = formatNum(pct.lula) + '%';
+        if (elB) elB.textContent = formatNum(pct.bolsonaro) + '%';
     }
 
     function setHidden(el, hide) {
