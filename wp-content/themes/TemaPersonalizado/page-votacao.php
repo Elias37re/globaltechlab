@@ -22,7 +22,7 @@ $ufs = tema_votacao_lista_ufs();
 ?>
 <main class="votacao-page">
     <header class="votacao-header">
-        <h1 class="votacao-titulo"><?php esc_html_e('Pesquisa de Votação Presidencial 2026', 'tema-personalizado'); ?></h1>
+        <h1 class="votacao-titulo"><?php esc_html_e('Enquente Presidencial 2026', 'tema-personalizado'); ?></h1>
     </header>
 
     <section class="votacao-cadastro js-votacao-cadastro" aria-labelledby="votacao-cadastro-titulo">
