@@ -21,7 +21,7 @@ $uri_bolsonaro = tema_uri_foto_candidato_multi(
 );
 $ufs = tema_votacao_lista_ufs();
 $votacao_aviso_lei = __(
-    'Este levantamento de dados não possui caráter científico e não se confunde com pesquisa eleitoral oficial (conforme Art. 33 da Lei 9.504/97).',
+    '   Este levantamento de dados não possui caráter científico e não se confunde com pesquisa eleitoral oficial (conforme Art. 33 da Lei 9.504/97).',
     'tema-personalizado'
 );
 ?>
