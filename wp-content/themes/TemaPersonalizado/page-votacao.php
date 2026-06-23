@@ -26,8 +26,15 @@ $votacao_aviso_lei = __(
 );
 ?>
 <main class="votacao-page">
+    
+    
+
+
+
     <header class="votacao-header">
+        
         <h1 class="votacao-titulo"><?php esc_html_e('Enquente Presidencial 2026', 'tema-personalizado'); ?></h1>
+      
     </header>
 
     <section class="votacao-cadastro js-votacao-cadastro" aria-labelledby="votacao-cadastro-titulo">
@@ -72,10 +79,8 @@ $votacao_aviso_lei = __(
     </div>
 
     <div class="votacao-urna js-votacao-urna" hidden>
-    <!-- AdSense: topo — substitua o span pelo script do AdSense quando for publicar -->
-    <aside class="adsense-slot adsense-top" id="adsense-top" aria-label="Publicidade">
-        <span class="adsense-label">Espaço AdSense (topo)</span>
-    </aside>
+    <!-- Slot de Anúncio: Topo -->
+    <?php tema_votacao_exibir_anuncio('top'); ?>
 
     <div class="votacao-grid">
         <article class="votacao-card" data-candidato="lula">
@@ -95,10 +100,8 @@ $votacao_aviso_lei = __(
             <button type="button" class="votacao-btn js-votar" data-candidato="lula">Votar</button>
         </article>
 
-        <!-- AdSense: entre os candidatos -->
-        <aside class="adsense-slot adsense-meio" id="adsense-meio" aria-label="Publicidade">
-            <span class="adsense-label">Espaço AdSense (lateral)</span>
-        </aside>
+        <!-- Slot de Anúncio: Lateral (Meio) -->
+        <?php tema_votacao_exibir_anuncio('meio'); ?>
 
         <article class="votacao-card" data-candidato="bolsonaro" aria-label="<?php esc_attr_e('Candidato Flavio Bolsonaro', 'tema-personalizado'); ?>">
             <div class="votacao-foto-wrap">
@@ -121,10 +124,8 @@ $votacao_aviso_lei = __(
     <p class="votacao-aviso-lei" role="note"><?php echo esc_html($votacao_aviso_lei); ?></p>
     </div>
 
-    <!-- AdSense: rodapé da página -->
-    <aside class="adsense-slot adsense-rodape" id="adsense-rodape" aria-label="Publicidade">
-        <span class="adsense-label">Espaço AdSense (rodapé)</span>
-    </aside>
+    <!-- Slot de Anúncio: Rodapé -->
+    <?php tema_votacao_exibir_anuncio('rodape'); ?>
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <?php if (get_the_content()) : ?>

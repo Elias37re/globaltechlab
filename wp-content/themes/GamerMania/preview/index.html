@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerMania - Promoções e Notícias de PS5 (Mockup)</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to the theme style.css stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="home blog">
+
+<div id="page" class="site">
+    <!-- Header -->
+    <header id="masthead" class="site-header">
+        <div class="container header-container">
+            <div class="site-logo">
+                <a href="#">
+                    <i class="fa-solid fa-gamepad" style="color: var(--color-ps-cyan); margin-right: 8px; text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);"></i>
+                    Gamer<span>Mania</span>
+                </a>
+            </div>
+
+            <button id="masthead-toggle" class="menu-toggle" aria-expanded="false" aria-label="Alternar Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav id="site-navigation" class="main-navigation">
+                <ul>
+                    <li class="current-menu-item"><a href="index.html">Home</a></li>
+                    <li><a href="single.html">Artigo Exemplo (Single)</a></li>
+                    <li><a href="#">Promoções Categoria</a></li>
+                    <li><a href="#">Notícias Categoria</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Content Container -->
+    <div id="content" class="site-content">
+        <div class="container">
+
+            <!-- Hero Section -->
+            <div class="hero-section" style="margin-bottom: 50px; text-align: center; padding: 60px 20px; background: linear-gradient(135deg, rgba(0, 114, 206, 0.15) 0%, rgba(0, 240, 255, 0.05) 100%), url('../images/hero-banner.png') no-repeat center center; background-size: cover; border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.6); min-height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(8, 12, 20, 0.75); z-index: 1;"></div>
+                <div style="position: relative; z-index: 2;">
+                    <h1 class="hero-title" style="font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; background: linear-gradient(90deg, #ffffff, #88c9ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 4px 12px rgba(0,0,0,0.3);">Promoções e Notícias de PS5</h1>
+                    <p class="hero-subtitle" style="font-size: 1.2rem; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto 25px; line-height: 1.5;">As melhores ofertas de jogos para PlayStation 5 atualizadas diariamente. Economize e jogue mais!</p>
+                    <div class="hero-badge" style="display: inline-block; background-color: rgba(0, 240, 255, 0.1); color: var(--color-ps-cyan); border: 1px solid var(--color-ps-cyan); padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; text-shadow: 0 0 5px rgba(0,240,255,0.4);">Foco em PS5 & Acessórios</div>
+                </div>
+            </div>
+
+            <!-- Main Site Area -->
+            <main id="primary" class="site-main">
+
+                <!-- 1. DEALS SECTION -->
+                <section class="promotions-section" style="margin-bottom: 60px;">
+                    <h2 class="section-title">10 Melhores Promoções da Semana</h2>
+
+                    <div class="deals-grid">
+                        
+                        <!-- Deal Card 1: Cyberpunk -->
+                        <article class="deal-card">
+                            <div class="deal-image-container">
+                                <div class="discount-badge">-35%</div>
+                                <a href="single.html">
+                                    <img src="../images/game-cover-cyberpunk.png" alt="Cyberpunk 2077">
+                                </a>
+                            </div>
+                            <div class="deal-content">
+                                <h3 class="deal-title">
+                                    <a href="single.html">Cyberpunk 2077: Ultimate Edition - PS5</a>
+                                </h3>
+                                <div class="deal-prices">
+                                    <span class="price-old">De R$ 349,90</span>
+                                    <div class="price-new-wrapper">
+                                        <span class="price-currency">Por</span>
+                                        <span class="price-new">R$ 227,43</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-deal" target="_blank" rel="nofollow noopener">
+                                    <i class="fa-solid fa-cart-shopping" style="margin-right: 8px;"></i>
+                                    Ir para a Oferta
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Deal Card 2: Elden Ring -->
+                        <article class="deal-card">
+                            <div class="deal-image-container">
+                                <div class="discount-badge">-30%</div>
+                                <a href="#">
+                                    <img src="../images/game-cover-fantasy.png" alt="Elden Ring">
+                                </a>
+                            </div>
+                            <div class="deal-content">
+                                <h3 class="deal-title">
+                                    <a href="#">Elden Ring: Shadow of the Erdtree Edition - PS5</a>
+                                </h3>
+                                <div class="deal-prices">
+                                    <span class="price-old">De R$ 399,90</span>
+                                    <div class="price-new-wrapper">
+                                        <span class="price-currency">Por</span>
+                                        <span class="price-new">R$ 279,93</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-deal" target="_blank" rel="nofollow noopener">
+                                    <i class="fa-solid fa-cart-shopping" style="margin-right: 8px;"></i>
+                                    Ir para a Oferta
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Deal Card 3: Sci-fi game -->
+                        <article class="deal-card">
+                            <div class="deal-image-container">
+                                <div class="discount-badge">-40%</div>
+                                <a href="#">
+                                    <img src="../images/game-cover-scifi.png" alt="Space Odyssey">
+                                </a>
+                            </div>
+                            <div class="deal-content">
+                                <h3 class="deal-title">
+                                    <a href="#">Starfield Chronicles: Stellar Edition - PS5</a>
+                                </h3>
+                                <div class="deal-prices">
+                                    <span class="price-old">De R$ 329,90</span>
+                                    <div class="price-new-wrapper">
+                                        <span class="price-currency">Por</span>
+                                        <span class="price-new">R$ 197,94</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-deal" target="_blank" rel="nofollow noopener">
+                                    <i class="fa-solid fa-cart-shopping" style="margin-right: 8px;"></i>
+                                    Ir para a Oferta
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Deal Card 4: Horizon (Fallback used) -->
+                        <article class="deal-card">
+                            <div class="deal-image-container">
+                                <div class="discount-badge">-50%</div>
+                                <a href="#">
+                                    <img src="../images/game-placeholder.jpg" alt="Horizon Forbidden West">
+                                </a>
+                            </div>
+                            <div class="deal-content">
+                                <h3 class="deal-title">
+                                    <a href="#">Horizon Forbidden West - Complete Edition - PS5</a>
+                                </h3>
+                                <div class="deal-prices">
+                                    <span class="price-old">De R$ 299,90</span>
+                                    <div class="price-new-wrapper">
+                                        <span class="price-currency">Por</span>
+                                        <span class="price-new">R$ 149,95</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-deal" target="_blank" rel="nofollow noopener">
+                                    <i class="fa-solid fa-cart-shopping" style="margin-right: 8px;"></i>
+                                    Ir para a Oferta
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Deal Card 5: Spider-Man 2 -->
+                        <article class="deal-card">
+                            <div class="deal-image-container">
+                                <div class="discount-badge">-25%</div>
+                                <a href="#">
+                                    <img src="../images/game-cover-cyberpunk.png" alt="Spider-Man 2">
+                                </a>
+                            </div>
+                            <div class="deal-content">
+                                <h3 class="deal-title">
+                                    <a href="#">Marvel's Spider-Man 2 - Edição Padrão PS5</a>
+                                </h3>
+                                <div class="deal-prices">
+                                    <span class="price-old">De R$ 349,90</span>
+                                    <div class="price-new-wrapper">
+                                        <span class="price-currency">Por</span>
+                                        <span class="price-new">R$ 262,42</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-deal" target="_blank" rel="nofollow noopener">
+                                    <i class="fa-solid fa-cart-shopping" style="margin-right: 8px;"></i>
+                                    Ir para a Oferta
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Deal Card 6: God of War -->
+                        <article class="deal-card">
+                            <div class="deal-image-container">
+                                <div class="discount-badge">-50%</div>
+                                <a href="#">
+                                    <img src="../images/game-cover-fantasy.png" alt="God of War">
+                                </a>
+                            </div>
+                            <div class="deal-content">
+                                <h3 class="deal-title">
+                                    <a href="#">God of War Ragnarök - Versão Digital PS5</a>
+                                </h3>
+                                <div class="deal-prices">
+                                    <span class="price-old">De R$ 349,90</span>
+                                    <div class="price-new-wrapper">
+                                        <span class="price-currency">Por</span>
+                                        <span class="price-new">R$ 174,95</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-deal" target="_blank" rel="nofollow noopener">
+                                    <i class="fa-solid fa-cart-shopping" style="margin-right: 8px;"></i>
+                                    Ir para a Oferta
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Deal Card 7: Resident Evil -->
+                        <article class="deal-card">
+                            <div class="deal-image-container">
+                                <div class="discount-badge">-40%</div>
+                                <a href="#">
+                                    <img src="../images/game-cover-cyberpunk.png" alt="Resident Evil 4">
+                                </a>
+                            </div>
+                            <div class="deal-content">
+                                <h3 class="deal-title">
+                                    <a href="#">Resident Evil 4 Remake - Mídia Física PS5</a>
+                                </h3>
+                                <div class="deal-prices">
+                                    <span class="price-old">De R$ 299,90</span>
+                                    <div class="price-new-wrapper">
+                                        <span class="price-currency">Por</span>
+                                        <span class="price-new">R$ 179,94</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-deal" target="_blank" rel="nofollow noopener">
+                                    <i class="fa-solid fa-cart-shopping" style="margin-right: 8px;"></i>
+                                    Ir para a Oferta
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Deal Card 8: Final Fantasy -->
+                        <article class="deal-card">
+                            <div class="deal-image-container">
+                                <div class="discount-badge">-30%</div>
+                                <a href="#">
+                                    <img src="../images/game-cover-fantasy.png" alt="Final Fantasy">
+                                </a>
+                            </div>
+                            <div class="deal-content">
+                                <h3 class="deal-title">
+                                    <a href="#">Final Fantasy VII Rebirth - PlayStation 5</a>
+                                </h3>
+                                <div class="deal-prices">
+                                    <span class="price-old">De R$ 349,90</span>
+                                    <div class="price-new-wrapper">
+                                        <span class="price-currency">Por</span>
+                                        <span class="price-new">R$ 244,93</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-deal" target="_blank" rel="nofollow noopener">
+                                    <i class="fa-solid fa-cart-shopping" style="margin-right: 8px;"></i>
+                                    Ir para a Oferta
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Deal Card 9: Demon's Souls -->
+                        <article class="deal-card">
+                            <div class="deal-image-container">
+                                <div class="discount-badge">-60%</div>
+                                <a href="#">
+                                    <img src="../images/game-placeholder.jpg" alt="Demons Souls">
+                                </a>
+                            </div>
+                            <div class="deal-content">
+                                <h3 class="deal-title">
+                                    <a href="#">Demon's Souls Remake - Exclusivo PS5</a>
+                                </h3>
+                                <div class="deal-prices">
+                                    <span class="price-old">De R$ 349,90</span>
+                                    <div class="price-new-wrapper">
+                                        <span class="price-currency">Por</span>
+                                        <span class="price-new">R$ 139,96</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-deal" target="_blank" rel="nofollow noopener">
+                                    <i class="fa-solid fa-cart-shopping" style="margin-right: 8px;"></i>
+                                    Ir para a Oferta
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Deal Card 10: Gran Turismo -->
+                        <article class="deal-card">
+                            <div class="deal-image-container">
+                                <div class="discount-badge">-40%</div>
+                                <a href="#">
+                                    <img src="../images/game-cover-scifi.png" alt="Gran Turismo">
+                                </a>
+                            </div>
+                            <div class="deal-content">
+                                <h3 class="deal-title">
+                                    <a href="#">Gran Turismo 7 - Edição Standard PS5</a>
+                                </h3>
+                                <div class="deal-prices">
+                                    <span class="price-old">De R$ 349,90</span>
+                                    <div class="price-new-wrapper">
+                                        <span class="price-currency">Por</span>
+                                        <span class="price-new">R$ 209,94</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn-deal" target="_blank" rel="nofollow noopener">
+                                    <i class="fa-solid fa-cart-shopping" style="margin-right: 8px;"></i>
+                                    Ir para a Oferta
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- 2. NEWS/BLOG SECTION -->
+                <section class="news-section" style="margin-top: 40px; border-top: 1px solid var(--color-border); padding-top: 50px;">
+                    <h2 class="section-title">Últimas Notícias do PlayStation 5</h2>
+
+                    <div class="news-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px;">
+                        
+                        <!-- News Card 1 -->
+                        <article class="news-card" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: var(--transition-smooth);">
+                            <div class="news-image-container" style="aspect-ratio: 16/9; overflow: hidden; position: relative;">
+                                <a href="single.html">
+                                    <img src="../images/hero-banner.png" alt="PS5 Pro" style="width:100%; height:100%; object-fit:cover; transition:var(--transition-smooth);">
+                                </a>
+                            </div>
+                            <div class="news-content" style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+                                <div class="news-meta" style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 10px; font-family: var(--font-heading);">
+                                    <span><i class="fa-solid fa-calendar-days" style="margin-right: 5px;"></i> 17 de Junho de 2026</span>
+                                </div>
+                                <h3 class="news-title" style="font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; line-height: 1.4;">
+                                    <a href="single.html" style="color: var(--color-text-primary);">PlayStation 5 Pro é anunciado oficialmente pela Sony com GPU aprimorada</a>
+                                </h3>
+                                <p class="news-excerpt" style="font-size: 0.95rem; color: var(--color-text-secondary); margin-bottom: 15px; flex-grow: 1;">
+                                    A Sony revelou os detalhes técnicos do PS5 Pro, prometendo taxas de quadro mais estáveis e Ray Tracing aprimorado por IA em títulos compatíveis...
+                                </p>
+                                <a href="single.html" class="read-more-link" style="color: var(--color-ps-cyan); font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; align-self: flex-start; display: flex; align-items: center; gap: 5px;">
+                                    Ler Notícia <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- News Card 2 -->
+                        <article class="news-card" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: var(--transition-smooth);">
+                            <div class="news-image-container" style="aspect-ratio: 16/9; overflow: hidden; position: relative;">
+                                <a href="#">
+                                    <img src="../images/game-placeholder.jpg" alt="GTA 6 PS5" style="width:100%; height:100%; object-fit:cover; transition:var(--transition-smooth);">
+                                </a>
+                            </div>
+                            <div class="news-content" style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+                                <div class="news-meta" style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 10px; font-family: var(--font-heading);">
+                                    <span><i class="fa-solid fa-calendar-days" style="margin-right: 5px;"></i> 15 de Junho de 2026</span>
+                                </div>
+                                <h3 class="news-title" style="font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; line-height: 1.4;">
+                                    <a href="#" style="color: var(--color-text-primary);">GTA 6 receberá otimizações exclusivas para o hardware do PlayStation 5</a>
+                                </h3>
+                                <p class="news-excerpt" style="font-size: 0.95rem; color: var(--color-text-secondary); margin-bottom: 15px; flex-grow: 1;">
+                                    De acordo com novas informações de desenvolvedores parceiros, o PlayStation 5 contará com tempos de carregamento instantâneos e suporte total ao feedback tátil do DualSense...
+                                </p>
+                                <a href="#" class="read-more-link" style="color: var(--color-ps-cyan); font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; align-self: flex-start; display: flex; align-items: center; gap: 5px;">
+                                    Ler Notícia <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- News Card 3 -->
+                        <article class="news-card" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--border-radius-lg); overflow: hidden; display: flex; flex-direction: column; transition: var(--transition-smooth);">
+                            <div class="news-image-container" style="aspect-ratio: 16/9; overflow: hidden; position: relative;">
+                                <a href="#">
+                                    <img src="../images/game-cover-fantasy.png" alt="PS5 Games" style="width:100%; height:100%; object-fit:cover; transition:var(--transition-smooth);">
+                                </a>
+                            </div>
+                            <div class="news-content" style="padding: 20px; display: flex; flex-direction: column; flex-grow: 1;">
+                                <div class="news-meta" style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 10px; font-family: var(--font-heading);">
+                                    <span><i class="fa-solid fa-calendar-days" style="margin-right: 5px;"></i> 10 de Junho de 2026</span>
+                                </div>
+                                <h3 class="news-title" style="font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; line-height: 1.4;">
+                                    <a href="#" style="color: var(--color-text-primary);">Os 10 jogos de PS5 mais jogados no primeiro semestre de 2026</a>
+                                </h3>
+                                <p class="news-excerpt" style="font-size: 0.95rem; color: var(--color-text-secondary); margin-bottom: 15px; flex-grow: 1;">
+                                    A Sony divulgou a lista dos jogos que mais acumularam horas de gameplay nos consoles PlayStation 5 nos primeiros 6 meses deste ano...
+                                </p>
+                                <a href="#" class="read-more-link" style="color: var(--color-ps-cyan); font-family: var(--font-heading); font-weight: 600; font-size: 0.9rem; align-self: flex-start; display: flex; align-items: center; gap: 5px;">
+                                    Ler Notícia <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="colophon" class="site-footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="footer-widget-column">
+                    <h3 class="footer-widget-title">Sobre o GamerMania</h3>
+                    <p>O GamerMania é a sua principal fonte de notícias, reviews e as melhores promoções de jogos para PlayStation 5. Economize dinheiro e fique por dentro do mundo PlayStation!</p>
+                </div>
+                <div class="footer-widget-column">
+                    <h3 class="footer-widget-title">Links Úteis</h3>
+                    <ul style="list-style:none; padding:0; margin:0;">
+                        <li style="margin-bottom:8px;"><a href="#" style="color:var(--color-text-secondary);">Política de Privacidade</a></li>
+                        <li style="margin-bottom:8px;"><a href="#" style="color:var(--color-text-secondary);">Termos de Uso</a></li>
+                        <li style="margin-bottom:8px;"><a href="#" style="color:var(--color-text-secondary);">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget-column">
+                    <h3 class="footer-widget-title">Aviso de Afiliados</h3>
+                    <p>Como afiliados, podemos receber comissões por compras qualificadas através de nossos links, sem custo adicional para você. Isso nos ajuda a manter o site no ar!</p>
+                </div>
+            </div>
+
+            <div class="site-info">
+                <div class="copyright">
+                    &copy; 2026 <strong>GamerMania</strong>. Todos os direitos reservados.
+                </div>
+                <div class="credits">
+                    Desenvolvido por Antigravity
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Scripts -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('masthead-toggle');
+        const mainNav = document.getElementById('site-navigation');
+        const body = document.body;
+
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                body.classList.toggle('mobile-nav-active');
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+            });
+        }
+    });
+</script>
+</body>
+</html>

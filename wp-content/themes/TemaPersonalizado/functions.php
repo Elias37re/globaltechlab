@@ -8,6 +8,7 @@ if (!defined('ABSPATH')) {
 }
 
 require_once get_template_directory() . '/inc/admin-votacao.php';
+require_once get_template_directory() . '/inc/admin-anuncios.php';
 
 define('TEMA_VOTACAO_DB_VERSION', '3');
 
